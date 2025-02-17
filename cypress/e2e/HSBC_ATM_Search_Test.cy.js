@@ -26,15 +26,17 @@ describe('ATM Locator Test Scenarios', () => {
     //Type country name as India and  In drop-down option click option India. Also Validate ATM Header name is showing as Rajbhavan Road
     cy.get('input#searchInput').type('India').type('{enter}')
     cy.contains('Rajbhavan Road, Somajiguda , Hyderabad, India, 500082').should('be.visible')
-
+    
     //Click on add Show more results button
     cy.contains('Show more results').click()
+    cy.screenshot()
 
     //Check second ATM branch name as Bund Garden Road
     cy.contains('Amar Avinash Corporate City, Bund Garden Road, Pune, India, 411001').should('be.visible')
 
     //Check Instagram in social media option in footer section
     cy.get('a.social-icon-instagram').should('be.visible')
+    cy.screenshot()
 
     //Check Facebook in social media option in footer section
     cy.get('a.social-icon-facebook').should('be.visible')
@@ -53,9 +55,12 @@ describe('ATM Locator Test Scenarios', () => {
 
     //Check and Click on Privacy link
     cy.contains('Privacy Statement').click({ force: true })
-
+    cy.screenshot()
+    
     //Validate Privacy Statement as Header
     cy.get('h1').contains('Privacy Statement')
+
+    
   })
 })
 

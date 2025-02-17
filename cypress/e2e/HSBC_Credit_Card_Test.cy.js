@@ -17,12 +17,14 @@ describe("Credit card test ", () => {
 
         //Validate Credit Card as a header text
         cy.get('h1').contains('Credit cards')
+        cy.screenshot()
 
         //Validate the Card HSBC Taj Credit Card is displayed with image,link and description
         cy.get('img#chp_main_image_3').should('be.visible')
         cy.get('span[class="link text"]').contains('HSBC Taj Credit Card')
         cy.get('div[class="item-content-text"]').contains('The Rarest Key. Experience the ultimate in luxury, from tailored stays at Taj Hotels to unrivalled privileges that match your lifestyle.')
-
+        cy.screenshot()
+        
         //Click on HSBC Taj Credit Card link
         cy.get('span[class="link text"]').contains('HSBC Taj Credit Card').click({ force: true })
 

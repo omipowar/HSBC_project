@@ -27,15 +27,18 @@ describe("HSBC Login Test Scenario", () => {
 
         //Check Continue button is available
         cy.get('button#username_submit_btn').should('be.visible')
+        cy.screenshot()
 
         // Type any random email in the username field
         cy.get('input#username').type('testingofpage@gmail.com')
 
         //Click on remember me
         cy.get('input#rememberMe').check()
+        cy.screenshot()
 
         //Validate there is a question mark tooltip present on the page
         cy.get('span[class="icon icon-circle-help-solid help-icon"]').should('be.visible')
+        cy.screenshot()
 
         //Click on the tooltip
         cy.get('span[class="icon icon-circle-help-solid help-icon"]').click({ force: true })
